@@ -23,6 +23,7 @@ use Symfony\Component\DependencyInjection\Parameter;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\Dotenv\Exception\PathException;
 
 final class SymfonyExtension implements Extension
 {
@@ -189,7 +190,12 @@ final class SymfonyExtension implements Extension
     private function loadEnv()
     {
         $env = getenv('APP_ENV');
-        (new Dotenv())->bootEnv(basename(dirname(__DIR__)).'/../.env', $env);
+        try {
+            (new Dotenv())->bootEnv(basename(dirname(__DIR__)).'/../.env', $env);
+        }
+        catch (PathException $exception) {
+            return null;
+        }
     }
 
     private function setupTestEnvironment(string $fallback): void
