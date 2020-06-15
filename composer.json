@@ -25,6 +25,7 @@
         "friends-of-behat/service-container-extension": "^1.1",
         "sylius-labs/coding-standard": ">=4.1.1, <=4.2.1",
         "symfony/browser-kit": "^6.4 || ^7.0",
+        "symfony/dotenv": "^4.4|^5.0",
         "symfony/framework-bundle": "^6.4 || ^7.0",
         "symfony/process": "^6.4 || ^7.0",
         "symfony/yaml": "^6.4 || ^7.0",
