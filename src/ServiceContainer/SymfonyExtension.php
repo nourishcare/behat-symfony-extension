@@ -81,6 +81,10 @@ final class SymfonyExtension implements Extension
 
         $this->loadBootstrap($this->autodiscoverBootstrap($config['bootstrap'], $container->getParameterBag()));
 
+        if (empty($config['bootstrap'])) {
+            $this->loadEnv();
+        }
+
         $this->loadKernel($container, $this->autodiscoverKernelConfiguration($config['kernel']));
         $this->loadDriverKernel($container);
 
@@ -179,8 +183,6 @@ final class SymfonyExtension implements Extension
     private function loadBootstrap(?string $bootstrap): void
     {
         if ($bootstrap === null) {
-            $this->loadEnv();
-
             return;
         }
 
