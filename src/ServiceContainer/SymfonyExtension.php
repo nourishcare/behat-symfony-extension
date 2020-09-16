@@ -82,7 +82,7 @@ final class SymfonyExtension implements Extension
         $this->loadBootstrap($this->autodiscoverBootstrap($config['bootstrap'], $container->getParameterBag()));
 
         if (empty($config['bootstrap'])) {
-            $this->loadEnv();
+            $this->loadEnv($config);
         }
 
         $this->loadKernel($container, $this->autodiscoverKernelConfiguration($config['kernel']));
@@ -189,7 +189,7 @@ final class SymfonyExtension implements Extension
         require_once $bootstrap;
     }
 
-    private function loadEnv()
+    private function loadEnv(array $config)
     {
         $env = $config['environment'] ?? $_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'test';
 
