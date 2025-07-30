@@ -1,5 +1,5 @@
 {
-    "name": "friends-of-behat/symfony-extension",
+    "name": "nourishcare/behat-symfony-extension",
     "type": "symfony-bundle",
     "description": "Integrates Behat with Symfony.",
     "license": "MIT",
