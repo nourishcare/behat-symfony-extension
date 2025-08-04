@@ -23,6 +23,10 @@ It allows for:
  * [Configuration reference](DOCUMENTATION.md#configuration-reference)
  
 For a bit of backstory, take a look at the [SymfonyExtension v2.0.0 release blogpost](https://kamilkokot.com/tame-behat-with-the-brand-new-symfony-extension).
+
+## Changes from upstream repo
+
+- Merged in this PR https://github.com/FriendsOfBehat/SymfonyExtension/pull/127
  
 ## Versioning and release cycle
 
